@@ -38,7 +38,7 @@ DATABASES = {
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://musicpayapp.onrender.com']
+ALLOWED_HOSTS = ['musicpayapp.onrender.com']
 CSRF_TRUSTED_ORIGINS = ['https://musicpayapp.onrender.com/*']
 
 
