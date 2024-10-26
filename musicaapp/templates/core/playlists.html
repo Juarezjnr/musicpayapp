@@ -11,11 +11,10 @@
 </head>
 
 <body>
-<div class="fluid-container p-3 d-flex w-100 justify-content-center text-center justify-content-between" style="background:#000 !important;">
-    <div class="d-flex mobile-flex align-items-center">
+
     <header  class="fluid-container p-3 d-flex w-100 justify-content-center text-center justify-content-between" style="background:#000 !important;">
-        <div class="d-flex mobile-flex align-items-center" style="gap:.5rem" style="gap:.5rem">
-        <a id="meuBotao3" ><img style="height:2rem;" src="{%static 'img/Untitled_design__14_-removebg-preview (1).png' %}"> </a> 
+        <div class="d-flex mobile-flex align-items-center" style="gap:.5rem">
+        <a id="meuBotao3" ><img style="height:2rem;" src="{%static 'img/Untitled_design_14-removebg-preview (1).png' %}"> </a> 
         
         <div id="temporizador1" style="color:#fff;"></div>
 <script>
@@ -45,7 +44,7 @@
                     let horas1 = Math.floor(tempoRestante / 3600000);
                     let minutos1 = Math.floor((tempoRestante % 3600000) / 60000);
                     let segundos1 = Math.floor((tempoRestante % 60000) / 1000);
-                    temporizador1.innerHTML = `${horas}h ${minutos}m ${segundos}s`;
+                    temporizador1.innerHTML = ${horas}h ${minutos}m ${segundos}s;
                     setTimeout(atualizarTemporizador1, 1000);
                 } else {
                     temporizador1.innerHTML = '';
@@ -58,7 +57,7 @@
     });
 </script>
         
-        <a href=""> <img style="height:2rem;" src="{%static 'img/Untitled_design__15_-removebg-preview (1) (1).png' %}">
+        <a href=""> <img style="height:2rem;" src="{%static 'img/Untitled_design_15-removebg-preview (1) (1).png' %}">
         </a>
 
         </div>
@@ -93,7 +92,7 @@
         function mostrarNotificacao() {
           const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
           const valorAleatorio = Math.floor(Math.random() * 1000) + 100;
-          notificationElement.innerHTML = `${nomeAleatorio} acabou de sacar R$ ${valorAleatorio}`;
+          notificationElement.innerHTML = ${nomeAleatorio} acabou de sacar R$ ${valorAleatorio};
           notificationElement.style.display = 'block';
           
           // Reaplica a animação
@@ -275,7 +274,7 @@ novoContainer.addEventListener('click', function(event)
                     let horas = Math.floor(tempoRestante / 3600000);
                     let minutos = Math.floor((tempoRestante % 3600000) / 60000);
                     let segundos = Math.floor((tempoRestante % 60000) / 1000);
-                    temporizador.innerHTML = `${horas}h ${minutos}m ${segundos}s`;
+                    temporizador.innerHTML = ${horas}h ${minutos}m ${segundos}s;
                     setTimeout(atualizarTemporizador, 1000);
                 } else {
                     temporizador.innerHTML = '';
@@ -370,10 +369,10 @@ novoContainer.addEventListener('click', function(event)
     
     // Não esqueça de atualizar o saldo na interface do usuário sempre que ele mudar
     function updateSaldoUI() {
-        saldoSpans.forEach(span => span.textContent = `R$ ${saldoUser.toFixed(2)}`);
+        saldoSpans.forEach(span => span.textContent = R$ ${saldoUser.toFixed(2)});
     }
     
-    // E chame `updateSaldoUI()` onde for apropriado, por exemplo, após modificar o saldo
+    // E chame updateSaldoUI() onde for apropriado, por exemplo, após modificar o saldo
     
     // Chame a função quando necessário
     checkAndUpdateSaldo();
@@ -505,7 +504,23 @@ document.getElementById('prev').addEventListener('click', () => {
             </div>
         </div>
         
-       
+        <script>
+            notificacao = document.querySelector('.notificacaoContainer')
+            // Espera 3 segundos (3000 milissegundos) para executar a função
+            setTimeout(function() {
+                // Seleciona o container da notificação e muda o display para block
+               notificacao.style.display = 'flex';
+            }, 500); // 3000 milissegundos = 3 segundos
+
+            notificacao.addEventListener('click', function(event)
+            {
+                if(event.target === this)
+                {
+                    this.style.display = 'none'
+                }
+            })
+
+        </script>
 <script type="text/javascript">
     window.onload = function() {
         let dobroBtn = document.querySelector('.dobroBtn');
@@ -604,8 +619,3 @@ document.getElementById('prev').addEventListener('click', () => {
 </script>
 
 </body>
-
-
-
-
-</html>
